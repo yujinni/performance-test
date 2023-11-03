@@ -8,7 +8,7 @@ class SampleUser(HttpUser):
 
     @task
     def normal_sort(self):
-        self.client.get("test/normal_sort/")
+        self.client.get("test/similar_age/")
 
     # @task
     # def priority_queue(self):

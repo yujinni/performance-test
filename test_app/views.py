@@ -57,3 +57,23 @@ def file_open2(request):
     df.fillna('NULL',inplace=True)
     data = df.to_dict('records')
     return JsonResponse({'dat':data})
+
+def avg_age(request):
+    csv_path = 'data/test_data_has_null.CSV'
+    df = pd.read_csv(csv_path, encoding='cp949')
+    df.fillna('NULL', inplace=True)
+    average_age = df['나이'].mean()
+    response_data = {'average_age': average_age}
+    return JsonResponse(response_data)
+
+def similar_age(request):
+    csv_path = 'data/test_data_has_null.CSV'
+    df = pd.read_csv(csv_path, encoding='cp949')
+    df.fillna(0, inplace=True)
+    average_age = df['나이'].mean()
+    df['age_difference'] = abs(df['나이'] - average_age)  # 칼럼 추가
+    similar_age = df.nsmallest(10, 'age_difference')
+    response_data = {
+        'similar_age': similar_age.to_dict('records')
+    }
+    return JsonResponse(response_data)

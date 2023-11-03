@@ -7,5 +7,7 @@ urlpatterns = [
     path('bubble_sort/', views.bubble_sort),
     path('fileopen/',views.file_open),
     path('fileopen2/',views.file_open2),
+    path('avg_age/', views.avg_age),
+    path('similar_age/', views.similar_age),
 ]
 
