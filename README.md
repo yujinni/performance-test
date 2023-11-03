@@ -1,15 +1,7 @@
-## 이유진
-CSV 데이터에서 Pandas를 활용하여 특정 조건에 해당하는 데이터를 추출하는 과제를 진행하였습니다. nsmallest 메서드로 데이터를 오름차순 정렬 후, 평균 나이와 비슷한 수치를 가진 10개의 데이터를 추출하였습니다. 서버의 성능 테스트를 위해 Locust 툴로 1초에 5명씩, 총 50명의 유저의 상황을 가정하고 테스트를 진행하였습니다.
-Number of users : 50, Spawn rate : 5로 설정하였고, Response Times를 통해 50%의 유저가 2ms 내로 응답을 받고, 95%의 유저가 10ms 내로 응답을 받는 것을 확인했습니다. 유저가 30명에서 50명으로 증가하는 구간에서 50th percentile과 95th percentile의 격차가 증가하여 병목 현상이 발생하였습니다. 총 유저의 수가 50명으로 일정해졌을 때 50th percentile과 95th percentile의 간격은 전체적으로 일정하였고 응답 시간 또한 증가하지 않아 추가적인 문제는 발생하지 않았습니다. 서버의 동작을 실제로 테스트하고 결과를 시각적으로 확인하는 과정이 흥미로웠으며 기회가 된다면 추가적으로 데이터 분석을 학습해보고 싶습니다.
+### 알고리즘 구현 및 성능 측정 과제 
 
-## 문철환
-Locust를 통해서 부하테스트를 진행하였고,
-직접 chart를 확인하여 부하생긴 형태에 따라 알고리즘을 변경시켜주는 상황을
-직접 보니, 새롭다는 생각이 들었습니다.
-저희가 구성한 알고리즘은 pandas로 이용하여 데이터를 가공하였는데, 다른방법으로 접근하여 파이썬의 .sort()메서드로 변경하여 slice로 필요한 데이터만 추출하려고도 했습니다.
-
-다른 팀의 locust의 값을 보니, 비슷한 곳과 빠른 곳들이 있었는데, 부하테스트에서
-그 값을 줄여주기위해 방법들을 찾는게 재미있어 보였습니다.
-
-유진이의 구글링과 깃활용하는 걸 보고, 관통을 진행하기 전 스킬을 많이 습득해놓아야겠다는 마음가짐을 갖게되었습니다.
+|이유진|문철환|
+|:---:|:---:|
+|[yujinni](https://github.com/labyu)|[muncheolhwan](https://github.com/muncheolhwan)|
+|<a href="https://github.com/yujinni"><img height="100px" width="100px" src="https://avatars.githubusercontent.com/u/97745006?v=4"/></a>| <a href="https://github.com/seungho4222"><img height="100px" width="100px" src="https://avatars.githubusercontent.com/u/139411501?v=4"/></a>|
 
