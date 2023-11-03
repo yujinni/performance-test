@@ -48,6 +48,12 @@ def priority_queue(request):
 def file_open(request):
     csv_path = 'data/test_data.CSV'
     df = pd.read_csv(csv_path, encoding='cp949')
+    data = df.to_dict('records')
+    return JsonResponse({'dat':data})
+
+def file_open2(request):
+    csv_path = 'data/test_data_has_null.CSV'
+    df = pd.read_csv(csv_path, encoding='cp949')
     df.fillna('NULL',inplace=True)
     data = df.to_dict('records')
     return JsonResponse({'dat':data})
