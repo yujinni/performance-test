@@ -4,9 +4,9 @@ import random
 import csv
 import pandas as pd
 
-
 array_length = 1000
 random_range = 5000
+
 
 @api_view(['GET'])
 def bubble_sort(request):
@@ -22,6 +22,7 @@ def bubble_sort(request):
     }
     return JsonResponse(context)
 
+
 @api_view(['GET'])
 def normal_sort(request):
     li = []
@@ -35,6 +36,7 @@ def normal_sort(request):
 
 from queue import PriorityQueue
 
+
 @api_view(['GET'])
 def priority_queue(request):
     pq = PriorityQueue()
@@ -45,11 +47,13 @@ def priority_queue(request):
     }
     return JsonResponse(context)
 
+
 def file_open(request):
     csv_path = 'data/test_data.CSV'
     df = pd.read_csv(csv_path, encoding='cp949')
     data = df.to_dict('records')
     return JsonResponse({'dat':data})
+
 
 def file_open2(request):
     csv_path = 'data/test_data_has_null.CSV'
@@ -58,6 +62,7 @@ def file_open2(request):
     data = df.to_dict('records')
     return JsonResponse({'dat':data})
 
+
 def avg_age(request):
     csv_path = 'data/test_data_has_null.CSV'
     df = pd.read_csv(csv_path, encoding='cp949')
@@ -65,6 +70,7 @@ def avg_age(request):
     average_age = df['나이'].mean()
     response_data = {'average_age': average_age}
     return JsonResponse(response_data)
+
 
 def similar_age(request):
     csv_path = 'data/test_data_has_null.CSV'
