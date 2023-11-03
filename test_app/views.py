@@ -1,6 +1,9 @@
 from django.http import JsonResponse
 from rest_framework.decorators import api_view
 import random
+import csv
+import pandas as pd
+
 
 array_length = 1000
 random_range = 5000
@@ -41,3 +44,10 @@ def priority_queue(request):
         'top': -pq.get()
     }
     return JsonResponse(context)
+
+def file_open(request):
+    csv_path = 'data/test_data.CSV'
+    df = pd.read_csv(csv_path, encoding='cp949')
+    df.fillna('NULL',inplace=True)
+    data = df.to_dict('records')
+    return JsonResponse({'dat':data})
